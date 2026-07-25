@@ -1,0 +1,2801 @@
+{
+  "AIRBUS A220-100": {
+    "speed": 850,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 448.823529,
+        "ecoX": 5.720479,
+        "busX": 11.671569,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 112,
+        "baseX": 448.866071,
+        "ecoX": 2.09461,
+        "busX": 4.657917,
+        "firstX": 10.077679,
+        "cargoFixedX": 532.677296,
+        "cargoPerTonX": -4.677934
+      }
+    ]
+  },
+  "AIRBUS A220-300": {
+    "speed": 850,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 591.735294,
+        "ecoX": 5.482904,
+        "busX": 11.267045,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 112,
+        "baseX": 591.785714,
+        "ecoX": 1.889844,
+        "busX": 4.309456,
+        "firstX": 10.077679,
+        "cargoFixedX": 532.669643,
+        "cargoPerTonX": -4.677579
+      }
+    ]
+  },
+  "AIRBUS A300-600R": {
+    "speed": 850,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 1812,
+        "ecoX": 4.769853,
+        "busX": 10.426952,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.058824,
+        "cargoPerTonX": 8.337418
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 112,
+        "baseX": 1812.107143,
+        "ecoX": 1.27557,
+        "busX": 3.553793,
+        "firstX": 10.077679,
+        "cargoFixedX": 532.669643,
+        "cargoPerTonX": -4.677579
+      }
+    ]
+  },
+  "AIRBUS A310-300": {
+    "speed": 850,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 1496.705882,
+        "ecoX": 4.946096,
+        "busX": 10.426845,
+        "firstX": 26.117647,
+        "cargoFixedX": 511,
+        "cargoPerTonX": 8.338235
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 112,
+        "baseX": 1496.776786,
+        "ecoX": 1.427468,
+        "busX": 3.553793,
+        "firstX": 10.077679,
+        "cargoFixedX": 532.667582,
+        "cargoPerTonX": -4.677541
+      }
+    ]
+  },
+  "AIRBUS A318-100": {
+    "speed": 828,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 514.735294,
+        "ecoX": 5.709343,
+        "busX": 11.671569,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 114,
+        "baseX": 514.780702,
+        "ecoX": 2.048407,
+        "busX": 4.576199,
+        "firstX": 9.900877,
+        "cargoFixedX": 523.340643,
+        "cargoPerTonX": -4.59576
+      }
+    ]
+  },
+  "AIRBUS A319-100": {
+    "speed": 828,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 616.970588,
+        "ecoX": 5.482812,
+        "busX": 11.266878,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.058824,
+        "cargoPerTonX": 8.336397
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 114,
+        "baseX": 617,
+        "ecoX": 1.856716,
+        "busX": 4.233902,
+        "firstX": 9.901023,
+        "cargoFixedX": 523.342105,
+        "cargoPerTonX": -4.595943
+      }
+    ]
+  },
+  "AIRBUS A319-100LR": {
+    "speed": 828,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 624.529412,
+        "ecoX": 5.482812,
+        "busX": 11.266878,
+        "firstX": 26.117034,
+        "cargoFixedX": 511,
+        "cargoPerTonX": 8.338235
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 114,
+        "baseX": 624.552632,
+        "ecoX": 1.856716,
+        "busX": 4.233852,
+        "firstX": 9.900877,
+        "cargoFixedX": 523.342105,
+        "cargoPerTonX": -4.595943
+      }
+    ]
+  },
+  "AIRBUS A319NEO": {
+    "speed": 839,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 740.264706,
+        "ecoX": 5.482812,
+        "busX": 11.266878,
+        "firstX": 26.117034,
+        "cargoFixedX": 511,
+        "cargoPerTonX": 8.338235
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 112,
+        "baseX": 740.294643,
+        "ecoX": 1.889872,
+        "busX": 4.309456,
+        "firstX": 10.077679,
+        "cargoFixedX": 532.6875,
+        "cargoPerTonX": -4.678013
+      }
+    ]
+  },
+  "AIRBUS A320-200": {
+    "speed": 828,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 846.470588,
+        "ecoX": 5.340278,
+        "busX": 10.987059,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 114,
+        "baseX": 846.526316,
+        "ecoX": 1.735989,
+        "busX": 3.996842,
+        "firstX": 9.900877,
+        "cargoFixedX": 523.342105,
+        "cargoPerTonX": -4.596004
+      }
+    ]
+  },
+  "AIRBUS A320NEO": {
+    "speed": 839,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 788.117647,
+        "ecoX": 5.252489,
+        "busX": 10.834831,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.062092,
+        "cargoPerTonX": 8.336601
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 112,
+        "baseX": 788.169643,
+        "ecoX": 1.691392,
+        "busX": 3.937169,
+        "firstX": 10.077679,
+        "cargoFixedX": 532.667659,
+        "cargoPerTonX": -4.677579
+      }
+    ]
+  },
+  "AIRBUS A321-200": {
+    "speed": 828,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 786.5,
+        "ecoX": 5.132821,
+        "busX": 10.616683,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 114,
+        "baseX": 786.552632,
+        "ecoX": 1.560447,
+        "busX": 3.68342,
+        "firstX": 9.901023,
+        "cargoFixedX": 523.342105,
+        "cargoPerTonX": -4.595694
+      }
+    ]
+  },
+  "AIRBUS A321NEO": {
+    "speed": 839,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 932.117647,
+        "ecoX": 5.040984,
+        "busX": 10.454575,
+        "firstX": 26.117034,
+        "cargoFixedX": 511,
+        "cargoPerTonX": 8.338235
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 112,
+        "baseX": 932.160714,
+        "ecoX": 1.509203,
+        "busX": 3.609524,
+        "firstX": 10.077679,
+        "cargoFixedX": 532.678571,
+        "cargoPerTonX": -4.677827
+      }
+    ]
+  },
+  "AIRBUS A321NEOLR": {
+    "speed": 839,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 959.382353,
+        "ecoX": 5.040984,
+        "busX": 10.454575,
+        "firstX": 26.117647,
+        "cargoFixedX": 511,
+        "cargoPerTonX": 8.338235
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 112,
+        "baseX": 959.4375,
+        "ecoX": 1.509203,
+        "busX": 3.609524,
+        "firstX": 10.077679,
+        "cargoFixedX": 532.678571,
+        "cargoPerTonX": -4.677827
+      }
+    ]
+  },
+  "AIRBUS A321XLR": {
+    "speed": 876,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 1159.34375,
+        "ecoX": 5.356045,
+        "busX": 11.107986,
+        "firstX": 27.75,
+        "cargoFixedX": 543,
+        "cargoPerTonX": 8.858073
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 108,
+        "baseX": 1159.407407,
+        "ecoX": 1.565099,
+        "busX": 3.743244,
+        "firstX": 10.450926,
+        "cargoFixedX": 552.416667,
+        "cargoPerTonX": -4.85108
+      }
+    ]
+  },
+  "AIRBUS A330-200": {
+    "speed": 871,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 1520.40625,
+        "ecoX": 4.999269,
+        "busX": 11.078636,
+        "firstX": 27.75,
+        "cargoFixedX": 543,
+        "cargoPerTonX": 8.858594
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 108,
+        "baseX": 1520.5,
+        "ecoX": 1.265075,
+        "busX": 3.685415,
+        "firstX": 10.450926,
+        "cargoFixedX": 552.416667,
+        "cargoPerTonX": -4.851157
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 200,
+        "baseX": 1520.515,
+        "ecoX": 0.303824,
+        "busX": 1.784043,
+        "firstX": 6.675357,
+        "cargoFixedX": 534.89,
+        "cargoPerTonX": -7.6775
+      }
+    ]
+  },
+  "AIRBUS A330-300": {
+    "speed": 871,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 1832.15625,
+        "ecoX": 4.957777,
+        "busX": 11.078636,
+        "firstX": 27.75,
+        "cargoFixedX": 542.96875,
+        "cargoPerTonX": 8.858817
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 108,
+        "baseX": 1832.268519,
+        "ecoX": 1.230156,
+        "busX": 3.685415,
+        "firstX": 10.450926,
+        "cargoFixedX": 552.407407,
+        "cargoPerTonX": -4.851025
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 200,
+        "baseX": 1832.285,
+        "ecoX": 0.271977,
+        "busX": 1.784043,
+        "firstX": 6.675446,
+        "cargoFixedX": 534.895,
+        "cargoPerTonX": -7.677589
+      }
+    ]
+  },
+  "AIRBUS A330-800": {
+    "speed": 883,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 1837.34375,
+        "ecoX": 4.999269,
+        "busX": 11.078636,
+        "firstX": 27.75,
+        "cargoFixedX": 542.9375,
+        "cargoPerTonX": 8.859375
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 108,
+        "baseX": 1837.453704,
+        "ecoX": 1.265075,
+        "busX": 3.685415,
+        "firstX": 10.450926,
+        "cargoFixedX": 552.407407,
+        "cargoPerTonX": -4.851047
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 198,
+        "baseX": 1837.469697,
+        "ecoX": 0.306899,
+        "busX": 1.802064,
+        "firstX": 6.742875,
+        "cargoFixedX": 540.292929,
+        "cargoPerTonX": -7.755051
+      }
+    ]
+  },
+  "AIRBUS A330-900": {
+    "speed": 883,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 1931.21875,
+        "ecoX": 4.936175,
+        "busX": 11.078636,
+        "firstX": 27.75,
+        "cargoFixedX": 542.96875,
+        "cargoPerTonX": 8.858696
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 108,
+        "baseX": 1931.324074,
+        "ecoX": 1.212037,
+        "busX": 3.685415,
+        "firstX": 10.450926,
+        "cargoFixedX": 552.416667,
+        "cargoPerTonX": -4.851047
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 198,
+        "baseX": 1931.343434,
+        "ecoX": 0.25802,
+        "busX": 1.802082,
+        "firstX": 6.742875,
+        "cargoFixedX": 540.30303,
+        "cargoPerTonX": -7.75516
+      }
+    ]
+  },
+  "AIRBUS A340-200": {
+    "speed": 871,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 1793.59375,
+        "ecoX": 4.981362,
+        "busX": 11.078636,
+        "firstX": 27.75,
+        "cargoFixedX": 543.001488,
+        "cargoPerTonX": 8.858631
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 108,
+        "baseX": 1793.703704,
+        "ecoX": 1.250011,
+        "busX": 3.685415,
+        "firstX": 10.450926,
+        "cargoFixedX": 552.405644,
+        "cargoPerTonX": -4.85097
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 200,
+        "baseX": 1793.725,
+        "ecoX": 0.290083,
+        "busX": 1.784043,
+        "firstX": 6.675357,
+        "cargoFixedX": 534.895238,
+        "cargoPerTonX": -7.677619
+      }
+    ]
+  },
+  "AIRBUS A340-300": {
+    "speed": 871,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 1995.28125,
+        "ecoX": 4.957741,
+        "busX": 11.078636,
+        "firstX": 27.75,
+        "cargoFixedX": 542.96875,
+        "cargoPerTonX": 8.858665
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 108,
+        "baseX": 1995.37963,
+        "ecoX": 1.230166,
+        "busX": 3.685415,
+        "firstX": 10.450926,
+        "cargoFixedX": 552.398148,
+        "cargoPerTonX": -4.8508
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 200,
+        "baseX": 1995.405,
+        "ecoX": 0.271972,
+        "busX": 1.784043,
+        "firstX": 6.675357,
+        "cargoFixedX": 534.895,
+        "cargoPerTonX": -7.677614
+      }
+    ]
+  },
+  "AIRBUS A340-500": {
+    "speed": 881,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 1959.84375,
+        "ecoX": 4.921217,
+        "busX": 11.078636,
+        "firstX": 27.75,
+        "cargoFixedX": 542.9375,
+        "cargoPerTonX": 8.859375
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 108,
+        "baseX": 1959.953704,
+        "ecoX": 1.199435,
+        "busX": 3.685415,
+        "firstX": 10.450926,
+        "cargoFixedX": 552.415056,
+        "cargoPerTonX": -4.851047
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 198,
+        "baseX": 1959.974747,
+        "ecoX": 0.246417,
+        "busX": 1.802064,
+        "firstX": 6.742875,
+        "cargoFixedX": 540.292929,
+        "cargoPerTonX": -7.755051
+      }
+    ]
+  },
+  "AIRBUS A340-600": {
+    "speed": 881,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 2070.15625,
+        "ecoX": 4.873526,
+        "busX": 11.078523,
+        "firstX": 27.749349,
+        "cargoFixedX": 542.969907,
+        "cargoPerTonX": 8.858796
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 108,
+        "baseX": 2070.25,
+        "ecoX": 1.159355,
+        "busX": 3.685415,
+        "firstX": 10.45108,
+        "cargoFixedX": 552.414952,
+        "cargoPerTonX": -4.850995
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 198,
+        "baseX": 2070.277778,
+        "ecoX": 0.209482,
+        "busX": 1.802064,
+        "firstX": 6.742785,
+        "cargoFixedX": 540.298167,
+        "cargoPerTonX": -7.755144
+      }
+    ]
+  },
+  "AIRBUS A350-1000": {
+    "speed": 911,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 2370.15625,
+        "ecoX": 4.879849,
+        "busX": 11.078636,
+        "firstX": 27.75,
+        "cargoFixedX": 542.96875,
+        "cargoPerTonX": 8.858817
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 104,
+        "baseX": 2370.278846,
+        "ecoX": 1.209457,
+        "busX": 3.827162,
+        "firstX": 10.852885,
+        "cargoFixedX": 573.644231,
+        "cargoPerTonX": -5.037431
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 192,
+        "baseX": 2370.302083,
+        "ecoX": 0.221075,
+        "busX": 1.858397,
+        "firstX": 6.95359,
+        "cargoFixedX": 557.1875,
+        "cargoPerTonX": -7.997489
+      }
+    ]
+  },
+  "AIRBUS A350-900ULR": {
+    "speed": 911,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 2231.5625,
+        "ecoX": 4.957741,
+        "busX": 11.078523,
+        "firstX": 27.749349,
+        "cargoFixedX": 542.96875,
+        "cargoPerTonX": 8.858665
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 104,
+        "baseX": 2231.663462,
+        "ecoX": 1.27748,
+        "busX": 3.827162,
+        "firstX": 10.852885,
+        "cargoFixedX": 573.644231,
+        "cargoPerTonX": -5.037369
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 192,
+        "baseX": 2231.692708,
+        "ecoX": 0.283304,
+        "busX": 1.858378,
+        "firstX": 6.953497,
+        "cargoFixedX": 557.182292,
+        "cargoPerTonX": -7.997514
+      }
+    ]
+  },
+  "AIRBUS A350-900XWB": {
+    "speed": 911,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 2076.21875,
+        "ecoX": 4.921184,
+        "busX": 11.078523,
+        "firstX": 27.749349,
+        "cargoFixedX": 542.96875,
+        "cargoPerTonX": 8.858724
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 104,
+        "baseX": 2076.317308,
+        "ecoX": 1.245567,
+        "busX": 3.827128,
+        "firstX": 10.852885,
+        "cargoFixedX": 573.644231,
+        "cargoPerTonX": -5.03746
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 192,
+        "baseX": 2076.338542,
+        "ecoX": 0.254112,
+        "busX": 1.858378,
+        "firstX": 6.953497,
+        "cargoFixedX": 557.182292,
+        "cargoPerTonX": -7.997504
+      }
+    ]
+  },
+  "AIRBUS A380-800": {
+    "speed": 903,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 2832.375,
+        "ecoX": 4.717669,
+        "busX": 11.078636,
+        "firstX": 27.75,
+        "cargoFixedX": 542.93821,
+        "cargoPerTonX": 8.85902
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 106,
+        "baseX": 2832.518868,
+        "ecoX": 1.047679,
+        "busX": 3.754951,
+        "firstX": 10.648113,
+        "cargoFixedX": 562.837907,
+        "cargoPerTonX": -4.942539
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 194,
+        "baseX": 2832.551546,
+        "ecoX": 0.090542,
+        "busX": 1.83922,
+        "firstX": 6.881904,
+        "cargoFixedX": 551.443533,
+        "cargoPerTonX": -7.915066
+      }
+    ]
+  },
+  "ATR 42-500": {
+    "speed": 540,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 42,
+        "baseX": 144.190476,
+        "ecoX": 6.724286,
+        "busX": 13.388889,
+        "firstX": 29.329004,
+        "cargoFixedX": 413.690476,
+        "cargoPerTonX": 6.75
+      }
+    ]
+  },
+  "ATR 42-600": {
+    "speed": 540,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 42,
+        "baseX": 141.404762,
+        "ecoX": 6.724048,
+        "busX": 13.388448,
+        "firstX": 29.327922,
+        "cargoFixedX": 413.690476,
+        "cargoPerTonX": 6.75
+      }
+    ]
+  },
+  "ATR 72-500": {
+    "speed": 500,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 44,
+        "baseX": 193.363636,
+        "ecoX": 5.389281,
+        "busX": 10.773282,
+        "firstX": 22.904412,
+        "cargoFixedX": 394.886364,
+        "cargoPerTonX": 6.443182
+      }
+    ]
+  },
+  "ATR 72-600": {
+    "speed": 500,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 44,
+        "baseX": 195.977273,
+        "ecoX": 5.389281,
+        "busX": 10.773282,
+        "firstX": 22.904412,
+        "cargoFixedX": 394.886364,
+        "cargoPerTonX": 6.443182
+      }
+    ]
+  },
+  "BAE SYSTEMS JETSTREAM41": {
+    "speed": 547,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 42,
+        "baseX": 103.261905,
+        "ecoX": 8.940476,
+        "busX": 17.62128,
+        "firstX": 37.964286,
+        "cargoFixedX": 413.690476,
+        "cargoPerTonX": 6.75
+      }
+    ]
+  },
+  "BAE SYSTEMS RJ-85": {
+    "speed": 765,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 500.058824,
+        "ecoX": 5.939556,
+        "busX": 12.092534,
+        "firstX": 26.117034,
+        "cargoFixedX": 511,
+        "cargoPerTonX": 8.338235
+      }
+    ]
+  },
+  "BOEING 717-200": {
+    "speed": 828,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 428.529412,
+        "ecoX": 5.731892,
+        "busX": 11.708466,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      }
+    ]
+  },
+  "BOEING 737-200": {
+    "speed": 876,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 656.0625,
+        "ecoX": 6.066062,
+        "busX": 12.400833,
+        "firstX": 27.75,
+        "cargoFixedX": 542.9375,
+        "cargoPerTonX": 8.859375
+      }
+    ]
+  },
+  "BOEING 737-300": {
+    "speed": 786,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 756.382353,
+        "ecoX": 5.577576,
+        "busX": 11.437769,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      }
+    ]
+  },
+  "BOEING 737-400": {
+    "speed": 786,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 753.294118,
+        "ecoX": 5.28587,
+        "busX": 10.889216,
+        "firstX": 26.118873,
+        "cargoFixedX": 511,
+        "cargoPerTonX": 8.338235
+      }
+    ]
+  },
+  "BOEING 737-500": {
+    "speed": 786,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 574.176471,
+        "ecoX": 5.755125,
+        "busX": 11.746374,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.063025,
+        "cargoPerTonX": 8.336134
+      }
+    ]
+  },
+  "BOEING 737-600": {
+    "speed": 834,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 469.205882,
+        "ecoX": 5.755013,
+        "busX": 11.746374,
+        "firstX": 26.117034,
+        "cargoFixedX": 511,
+        "cargoPerTonX": 8.338235
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 114,
+        "baseX": 469.22807,
+        "ecoX": 2.087121,
+        "busX": 4.63969,
+        "firstX": 9.900877,
+        "cargoFixedX": 523.322055,
+        "cargoPerTonX": -4.595238
+      }
+    ]
+  },
+  "BOEING 737-700": {
+    "speed": 834,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 546,
+        "ecoX": 5.577576,
+        "busX": 11.43759,
+        "firstX": 26.117647,
+        "cargoFixedX": 511,
+        "cargoPerTonX": 8.338235
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 114,
+        "baseX": 546.026316,
+        "ecoX": 1.936889,
+        "busX": 4.37837,
+        "firstX": 9.900877,
+        "cargoFixedX": 523.341009,
+        "cargoPerTonX": -4.595943
+      }
+    ]
+  },
+  "BOEING 737-700ER": {
+    "speed": 834,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 583.882353,
+        "ecoX": 5.577576,
+        "busX": 11.437769,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.0625,
+        "cargoPerTonX": 8.336397
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 114,
+        "baseX": 583.921053,
+        "ecoX": 1.936889,
+        "busX": 4.37837,
+        "firstX": 9.900877,
+        "cargoFixedX": 523.341009,
+        "cargoPerTonX": -4.595943
+      }
+    ]
+  },
+  "BOEING 737-800": {
+    "speed": 834,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 654.764706,
+        "ecoX": 5.285948,
+        "busX": 10.889216,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 114,
+        "baseX": 654.815789,
+        "ecoX": 1.690012,
+        "busX": 3.914077,
+        "firstX": 9.900877,
+        "cargoFixedX": 523.331579,
+        "cargoPerTonX": -4.595614
+      }
+    ]
+  },
+  "BOEING 737-900ER": {
+    "speed": 834,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 695.617647,
+        "ecoX": 5.132754,
+        "busX": 10.616562,
+        "firstX": 26.117034,
+        "cargoFixedX": 511,
+        "cargoPerTonX": 8.338235
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 114,
+        "baseX": 695.649123,
+        "ecoX": 1.560427,
+        "busX": 3.68342,
+        "firstX": 9.900877,
+        "cargoFixedX": 523.331738,
+        "cargoPerTonX": -4.595694
+      }
+    ]
+  },
+  "BOEING 737-MAX8": {
+    "speed": 839,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 814.205882,
+        "ecoX": 5.285948,
+        "busX": 10.889216,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.058824,
+        "cargoPerTonX": 8.336601
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 112,
+        "baseX": 814.25,
+        "ecoX": 1.720214,
+        "busX": 3.984014,
+        "firstX": 10.077827,
+        "cargoFixedX": 532.678571,
+        "cargoPerTonX": -4.677579
+      }
+    ]
+  },
+  "BOEING 737-MAX8-200": {
+    "speed": 839,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 845.235294,
+        "ecoX": 5.226176,
+        "busX": 10.783519,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.058824,
+        "cargoPerTonX": 8.336765
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 112,
+        "baseX": 845.285714,
+        "ecoX": 1.668728,
+        "busX": 3.892897,
+        "firstX": 10.077679,
+        "cargoFixedX": 532.678571,
+        "cargoPerTonX": -4.677679
+      }
+    ]
+  },
+  "BOEING 737-MAX9": {
+    "speed": 839,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 858.970588,
+        "ecoX": 5.177311,
+        "busX": 10.703727,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 112,
+        "baseX": 859.026786,
+        "ecoX": 1.626616,
+        "busX": 3.8242,
+        "firstX": 10.077827,
+        "cargoFixedX": 532.6875,
+        "cargoPerTonX": -4.67776
+      }
+    ]
+  },
+  "BOEING 747-400": {
+    "speed": 903,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 2590.03125,
+        "ecoX": 4.792448,
+        "busX": 11.078636,
+        "firstX": 27.75,
+        "cargoFixedX": 543.001894,
+        "cargoPerTonX": 8.858428
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 106,
+        "baseX": 2590.160377,
+        "ecoX": 1.111757,
+        "busX": 3.754951,
+        "firstX": 10.648113,
+        "cargoFixedX": 562.818754,
+        "cargoPerTonX": -4.942396
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 194,
+        "baseX": 2590.185567,
+        "ecoX": 0.149688,
+        "busX": 1.83922,
+        "firstX": 6.881904,
+        "cargoFixedX": 551.438301,
+        "cargoPerTonX": -7.915027
+      }
+    ]
+  },
+  "BOEING 747-8I": {
+    "speed": 911,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 2489.03125,
+        "ecoX": 4.760766,
+        "busX": 11.078636,
+        "firstX": 27.75,
+        "cargoFixedX": 542.96875,
+        "cargoPerTonX": 8.858964
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 104,
+        "baseX": 2489.163462,
+        "ecoX": 1.10546,
+        "busX": 3.827162,
+        "firstX": 10.852885,
+        "cargoFixedX": 573.663462,
+        "cargoPerTonX": -5.037576
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 192,
+        "baseX": 2489.192708,
+        "ecoX": 0.12592,
+        "busX": 1.858378,
+        "firstX": 6.95359,
+        "cargoFixedX": 557.182292,
+        "cargoPerTonX": -7.997464
+      }
+    ]
+  },
+  "BOEING 757-200": {
+    "speed": 850,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 1147.029412,
+        "ecoX": 5.058577,
+        "busX": 10.489082,
+        "firstX": 26.117647,
+        "cargoFixedX": 511,
+        "cargoPerTonX": 8.338235
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 112,
+        "baseX": 1147.080357,
+        "ecoX": 1.524376,
+        "busX": 3.63934,
+        "firstX": 10.077679,
+        "cargoFixedX": 532.6875,
+        "cargoPerTonX": -4.677885
+      }
+    ]
+  },
+  "BOEING 757-300": {
+    "speed": 850,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 984.352941,
+        "ecoX": 4.895513,
+        "busX": 10.426952,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.060784,
+        "cargoPerTonX": 8.337255
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 112,
+        "baseX": 984.419643,
+        "ecoX": 1.383853,
+        "busX": 3.617116,
+        "firstX": 10.077679,
+        "cargoFixedX": 532.676786,
+        "cargoPerTonX": -4.677679
+      }
+    ]
+  },
+  "BOEING 767-200ER": {
+    "speed": 850,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 1584.764706,
+        "ecoX": 4.907505,
+        "busX": 10.426952,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.121107,
+        "cargoPerTonX": 8.336505
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 112,
+        "baseX": 1584.839286,
+        "ecoX": 1.394196,
+        "busX": 3.553793,
+        "firstX": 10.077827,
+        "cargoFixedX": 532.685924,
+        "cargoPerTonX": -4.677784
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 206,
+        "baseX": 1584.859223,
+        "ecoX": 0.455055,
+        "busX": 1.732081,
+        "firstX": 6.481016,
+        "cargoFixedX": 519.31068,
+        "cargoPerTonX": -7.453883
+      }
+    ]
+  },
+  "BOEING 767-300ER": {
+    "speed": 850,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 1648.852941,
+        "ecoX": 4.784439,
+        "busX": 10.426952,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.030812,
+        "cargoPerTonX": 8.337535
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 112,
+        "baseX": 1648.9375,
+        "ecoX": 1.288169,
+        "busX": 3.553761,
+        "firstX": 10.077679,
+        "cargoFixedX": 532.676871,
+        "cargoPerTonX": -4.677721
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 206,
+        "baseX": 1648.951456,
+        "ecoX": 0.357681,
+        "busX": 1.732081,
+        "firstX": 6.480929,
+        "cargoFixedX": 519.315765,
+        "cargoPerTonX": -7.453999
+      }
+    ]
+  },
+  "BOEING 767-400ER": {
+    "speed": 850,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 1428.588235,
+        "ecoX": 4.701496,
+        "busX": 10.426952,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.337596
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 112,
+        "baseX": 1428.660714,
+        "ecoX": 1.216698,
+        "busX": 3.553793,
+        "firstX": 10.077679,
+        "cargoFixedX": 532.669643,
+        "cargoPerTonX": -4.677601
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 206,
+        "baseX": 1428.674757,
+        "ecoX": 0.29204,
+        "busX": 1.732081,
+        "firstX": 6.481016,
+        "cargoFixedX": 519.315534,
+        "cargoPerTonX": -7.453989
+      }
+    ]
+  },
+  "BOEING 777-200": {
+    "speed": 892,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 1786.53125,
+        "ecoX": 4.957741,
+        "busX": 11.078636,
+        "firstX": 27.75,
+        "cargoFixedX": 542.969866,
+        "cargoPerTonX": 8.858817
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 106,
+        "baseX": 1786.622642,
+        "ecoX": 1.253377,
+        "busX": 3.754951,
+        "firstX": 10.629245,
+        "cargoFixedX": 562.837938,
+        "cargoPerTonX": -4.942554
+      }
+    ]
+  },
+  "BOEING 777-200ER": {
+    "speed": 892,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 1815.8125,
+        "ecoX": 4.957777,
+        "busX": 11.078636,
+        "firstX": 27.75,
+        "cargoFixedX": 542.969828,
+        "cargoPerTonX": 8.858836
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 106,
+        "baseX": 1815.924528,
+        "ecoX": 1.253366,
+        "busX": 3.754951,
+        "firstX": 10.648113,
+        "cargoFixedX": 562.837996,
+        "cargoPerTonX": -4.942583
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 196,
+        "baseX": 1815.943878,
+        "ecoX": 0.277528,
+        "busX": 1.820452,
+        "firstX": 6.81168,
+        "cargoFixedX": 545.8114,
+        "cargoPerTonX": -7.834272
+      }
+    ]
+  },
+  "BOEING 777-200LR": {
+    "speed": 892,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 2038.0625,
+        "ecoX": 4.957741,
+        "busX": 11.078636,
+        "firstX": 27.75,
+        "cargoFixedX": 542.96875,
+        "cargoPerTonX": 8.858887
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 106,
+        "baseX": 2038.169811,
+        "ecoX": 1.253366,
+        "busX": 3.754951,
+        "firstX": 10.648113,
+        "cargoFixedX": 562.830189,
+        "cargoPerTonX": -4.942512
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 196,
+        "baseX": 2038.193878,
+        "ecoX": 0.277528,
+        "busX": 1.765196,
+        "firstX": 6.811589,
+        "cargoFixedX": 545.811224,
+        "cargoPerTonX": -7.834263
+      }
+    ]
+  },
+  "BOEING 777-300": {
+    "speed": 892,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 2018,
+        "ecoX": 4.85858,
+        "busX": 11.078636,
+        "firstX": 27.75,
+        "cargoFixedX": 542.96875,
+        "cargoPerTonX": 8.858902
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 106,
+        "baseX": 2018.122642,
+        "ecoX": 1.168405,
+        "busX": 3.754951,
+        "firstX": 10.648113,
+        "cargoFixedX": 562.830189,
+        "cargoPerTonX": -4.942539
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 196,
+        "baseX": 2018.142857,
+        "ecoX": 0.199907,
+        "busX": 1.820452,
+        "firstX": 6.811589,
+        "cargoFixedX": 545.811224,
+        "cargoPerTonX": -7.834261
+      }
+    ]
+  },
+  "BOEING 777-300ER": {
+    "speed": 892,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 2215.0625,
+        "ecoX": 4.85858,
+        "busX": 11.078636,
+        "firstX": 27.75,
+        "cargoFixedX": 542.969669,
+        "cargoPerTonX": 8.858915
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 106,
+        "baseX": 2215.188679,
+        "ecoX": 1.168405,
+        "busX": 3.754951,
+        "firstX": 10.648113,
+        "cargoFixedX": 562.818812,
+        "cargoPerTonX": -4.942425
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 196,
+        "baseX": 2215.209184,
+        "ecoX": 0.199907,
+        "busX": 1.820471,
+        "firstX": 6.81168,
+        "cargoFixedX": 545.811375,
+        "cargoPerTonX": -7.834259
+      }
+    ]
+  },
+  "BOEING 787-10": {
+    "speed": 911,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 1842.53125,
+        "ecoX": 4.957777,
+        "busX": 11.078636,
+        "firstX": 27.75,
+        "cargoFixedX": 543,
+        "cargoPerTonX": 8.858665
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 104,
+        "baseX": 1842.644231,
+        "ecoX": 1.27748,
+        "busX": 3.827162,
+        "firstX": 10.852885,
+        "cargoFixedX": 573.644231,
+        "cargoPerTonX": -5.037369
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 192,
+        "baseX": 1842.666667,
+        "ecoX": 0.28331,
+        "busX": 1.858378,
+        "firstX": 6.95359,
+        "cargoFixedX": 557.177083,
+        "cargoPerTonX": -7.997396
+      }
+    ]
+  },
+  "BOEING 787-8": {
+    "speed": 911,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 1457.0625,
+        "ecoX": 5.034531,
+        "busX": 11.078523,
+        "firstX": 27.749349,
+        "cargoFixedX": 542.970238,
+        "cargoPerTonX": 8.858631
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 104,
+        "baseX": 1457.125,
+        "ecoX": 1.344526,
+        "busX": 3.827162,
+        "firstX": 10.852885,
+        "cargoFixedX": 573.701007,
+        "cargoPerTonX": -5.038004
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 192,
+        "baseX": 1457.145833,
+        "ecoX": 0.344659,
+        "busX": 1.858378,
+        "firstX": 6.953497,
+        "cargoFixedX": 557.177083,
+        "cargoPerTonX": -7.997396
+      }
+    ]
+  },
+  "BOEING 787-9": {
+    "speed": 911,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 1758.21875,
+        "ecoX": 4.981362,
+        "busX": 11.078636,
+        "firstX": 27.75,
+        "cargoFixedX": 542.96875,
+        "cargoPerTonX": 8.858631
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 104,
+        "baseX": 1758.307692,
+        "ecoX": 1.2981,
+        "busX": 3.827162,
+        "firstX": 10.852885,
+        "cargoFixedX": 573.653846,
+        "cargoPerTonX": -5.037546
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 192,
+        "baseX": 1758.328125,
+        "ecoX": 0.302176,
+        "busX": 1.858378,
+        "firstX": 6.95359,
+        "cargoFixedX": 557.177083,
+        "cargoPerTonX": -7.997396
+      }
+    ]
+  },
+  "BOEING MD-83": {
+    "speed": 807,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 861.882353,
+        "ecoX": 5.429024,
+        "busX": 11.165281,
+        "firstX": 26.117647,
+        "cargoFixedX": 511,
+        "cargoPerTonX": 8.338235
+      }
+    ]
+  },
+  "BOEING MD-90-30": {
+    "speed": 807,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 671.5,
+        "ecoX": 5.429024,
+        "busX": 11.165601,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.062092,
+        "cargoPerTonX": 8.336601
+      }
+    ]
+  },
+  "BOMBARDIER CRJ-1000": {
+    "speed": 850,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 337.5,
+        "ecoX": 6.173784,
+        "busX": 12.535862,
+        "firstX": 26.117647,
+        "cargoFixedX": 511,
+        "cargoPerTonX": 8.338235
+      }
+    ]
+  },
+  "BOMBARDIER CRJ-200": {
+    "speed": 828,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 199.470588,
+        "ecoX": 8.306471,
+        "busX": 16.539216,
+        "firstX": 36.229947,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      }
+    ]
+  },
+  "BOMBARDIER CRJ-550": {
+    "speed": 834,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 263.441176,
+        "ecoX": 7.802116,
+        "busX": 15.557875,
+        "firstX": 33.357466,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      }
+    ]
+  },
+  "BOMBARDIER CRJ-700": {
+    "speed": 834,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 253.705882,
+        "ecoX": 6.832014,
+        "busX": 13.70896,
+        "firstX": 28.969771,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      }
+    ]
+  },
+  "BOMBARDIER CRJ-900": {
+    "speed": 850,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 294.647059,
+        "ecoX": 6.481046,
+        "busX": 13.040588,
+        "firstX": 27.340336,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      }
+    ]
+  },
+  "BOMBARDIER Q-200": {
+    "speed": 537,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 42,
+        "baseX": 114.142857,
+        "ecoX": 7.555357,
+        "busX": 14.787879,
+        "firstX": 32.686508,
+        "cargoFixedX": 413.690476,
+        "cargoPerTonX": 6.75
+      }
+    ]
+  },
+  "BOMBARDIER Q-300": {
+    "speed": 537,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 42,
+        "baseX": 166.785714,
+        "ecoX": 6.367985,
+        "busX": 12.59447,
+        "firstX": 27.003663,
+        "cargoFixedX": 413.690476,
+        "cargoPerTonX": 6.75
+      }
+    ]
+  },
+  "BOMBARDIER Q-400": {
+    "speed": 667,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 38,
+        "baseX": 213.263158,
+        "ecoX": 5.654441,
+        "busX": 12.168959,
+        "firstX": 25.382964,
+        "cargoFixedX": 457.236842,
+        "cargoPerTonX": 7.460526
+      }
+    ]
+  },
+  "COMAC C909": {
+    "speed": 870,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 297.4375,
+        "ecoX": 7.204861,
+        "busX": 13.792813,
+        "firstX": 28.899554,
+        "cargoFixedX": 536.71875,
+        "cargoPerTonX": 8.859375
+      }
+    ]
+  },
+  "COMAC C919": {
+    "speed": 838,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 755.176471,
+        "ecoX": 5.379564,
+        "busX": 11.07261,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      }
+    ]
+  },
+  "DASSAULT F900-B": {
+    "speed": 950,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 50.3125,
+        "ecoX": 15.944901,
+        "busX": 31.309375,
+        "firstX": 73.203125,
+        "cargoFixedX": -182.09375,
+        "cargoPerTonX": 190.125
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 102,
+        "baseX": 50.323529,
+        "ecoX": 11.085139,
+        "busX": 21.95,
+        "firstX": 53.154412,
+        "cargoFixedX": 180.078431,
+        "cargoPerTonX": 96.068627
+      }
+    ]
+  },
+  "DORNIER D328-100": {
+    "speed": 620,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 40,
+        "baseX": 120.525,
+        "ecoX": 9.024219,
+        "busX": 17.861029,
+        "firstX": 39.8625,
+        "cargoFixedX": 434.375,
+        "cargoPerTonX": 7.0875
+      }
+    ]
+  },
+  "EMBRAER E190-E2": {
+    "speed": 839,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 412.352941,
+        "ecoX": 6.000774,
+        "busX": 12.193044,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 112,
+        "baseX": 412.383929,
+        "ecoX": 2.336035,
+        "busX": 5.107214,
+        "firstX": 10.73297,
+        "cargoFixedX": 532.676786,
+        "cargoPerTonX": -4.677679
+      }
+    ]
+  },
+  "EMBRAER E195-E2": {
+    "speed": 839,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 452.5,
+        "ecoX": 5.605963,
+        "busX": 11.468773,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      }
+    ]
+  },
+  "EMBRAER EMB-120": {
+    "speed": 552,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 42,
+        "baseX": 113.166667,
+        "ecoX": 8.940873,
+        "busX": 17.622024,
+        "firstX": 37.964286,
+        "cargoFixedX": 413.690476,
+        "cargoPerTonX": 6.75
+      }
+    ]
+  },
+  "EMBRAER ERJ-135": {
+    "speed": 828,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 143.235294,
+        "ecoX": 9.749205,
+        "busX": 19.200735,
+        "firstX": 43.229779,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      }
+    ]
+  },
+  "EMBRAER ERJ-140": {
+    "speed": 828,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 167.735294,
+        "ecoX": 8.86631,
+        "busX": 17.489583,
+        "firstX": 38.097059,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      }
+    ]
+  },
+  "EMBRAER ERJ-145": {
+    "speed": 828,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 191.588235,
+        "ecoX": 8.306176,
+        "busX": 16.538671,
+        "firstX": 36.22861,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      }
+    ]
+  },
+  "EMBRAER ERJ-145XR": {
+    "speed": 850,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 197.911765,
+        "ecoX": 8.306471,
+        "busX": 16.539216,
+        "firstX": 36.229947,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      }
+    ]
+  },
+  "EMBRAER ERJ-170": {
+    "speed": 828,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 255,
+        "ecoX": 6.76636,
+        "busX": 13.600602,
+        "firstX": 28.369195,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      }
+    ]
+  },
+  "EMBRAER ERJ-175": {
+    "speed": 828,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 283.147059,
+        "ecoX": 6.532754,
+        "busX": 13.211397,
+        "firstX": 27.828676,
+        "cargoFixedX": 511,
+        "cargoPerTonX": 8.338235
+      }
+    ]
+  },
+  "EMBRAER ERJ-190": {
+    "speed": 828,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 349.823529,
+        "ecoX": 6.000645,
+        "busX": 12.19281,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.063725,
+        "cargoPerTonX": 8.335784
+      }
+    ]
+  },
+  "EMBRAER ERJ-195": {
+    "speed": 828,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 371.529412,
+        "ecoX": 5.855432,
+        "busX": 11.953287,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      }
+    ]
+  },
+  "GULFSTREAM G650": {
+    "speed": 983,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 30,
+        "baseX": 431.8,
+        "ecoX": 17.007895,
+        "busX": 33.396667,
+        "firstX": 78.083333,
+        "cargoFixedX": -194.166667,
+        "cargoPerTonX": 202.783333
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 98,
+        "baseX": 431.826531,
+        "ecoX": 11.537594,
+        "busX": 22.846429,
+        "firstX": 55.325255,
+        "cargoFixedX": 187.428571,
+        "cargoPerTonX": 99.989796
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 180,
+        "baseX": 431.833333,
+        "ecoX": 9.666082,
+        "busX": 19.234167,
+        "firstX": 47.2625,
+        "cargoFixedX": 283.783333,
+        "cargoPerTonX": 69.105556
+      }
+    ]
+  },
+  "ILYUSHIN IL-114": {
+    "speed": 500,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 44,
+        "baseX": 186.636364,
+        "ecoX": 5.724254,
+        "busX": 11.436688,
+        "firstX": 24.148485,
+        "cargoFixedX": 394.886364,
+        "cargoPerTonX": 6.443182
+      }
+    ]
+  },
+  "ILYUSHIN IL-96-300": {
+    "speed": 870,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 991,
+        "ecoX": 5.189167,
+        "busX": 11.078636,
+        "firstX": 27.75,
+        "cargoFixedX": 543,
+        "cargoPerTonX": 8.858594
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 202,
+        "baseX": 991.084158,
+        "ecoX": 0.445025,
+        "busX": 1.766397,
+        "firstX": 6.609353,
+        "cargoFixedX": 529.60396,
+        "cargoPerTonX": -7.601609
+      }
+    ]
+  },
+  "ILYUSHIN IL-96M": {
+    "speed": 870,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 1963.59375,
+        "ecoX": 4.962299,
+        "busX": 11.078636,
+        "firstX": 27.75,
+        "cargoFixedX": 542.9375,
+        "cargoPerTonX": 8.859375
+      },
+      {
+        "name": "LWO_10010",
+        "minKm": 7510,
+        "maxKm": 18000,
+        "distance": 10010,
+        "factor": 202,
+        "baseX": 1963.727723,
+        "ecoX": 0.272737,
+        "busX": 1.76638,
+        "firstX": 6.609264,
+        "cargoFixedX": 529.599235,
+        "cargoPerTonX": -7.601598
+      }
+    ]
+  },
+  "IPTN CN-235": {
+    "speed": 450,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 48,
+        "baseX": 311.708333,
+        "ecoX": 6.280303,
+        "busX": 12.388455,
+        "firstX": 26.984375,
+        "cargoFixedX": 361.979167,
+        "cargoPerTonX": 5.90625
+      }
+    ]
+  },
+  "SAAB S-2000": {
+    "speed": 665,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 38,
+        "baseX": 206.631579,
+        "ecoX": 6.925136,
+        "busX": 13.734786,
+        "firstX": 29.846154,
+        "cargoFixedX": 457.236842,
+        "cargoPerTonX": 7.460526
+      }
+    ]
+  },
+  "SAAB S-340B": {
+    "speed": 467,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 46,
+        "baseX": 130.347826,
+        "ecoX": 7.205934,
+        "busX": 14.191848,
+        "firstX": 31.952446,
+        "cargoFixedX": 377.717391,
+        "cargoPerTonX": 6.163043
+      }
+    ]
+  },
+  "SUKHOI SSJ-100-95": {
+    "speed": 828,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 319.735294,
+        "ecoX": 6.294718,
+        "busX": 12.736111,
+        "firstX": 26.48913,
+        "cargoFixedX": 511,
+        "cargoPerTonX": 8.338235
+      }
+    ]
+  },
+  "TUPOLEV TU-154M": {
+    "speed": 913,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 32,
+        "baseX": 768.65625,
+        "ecoX": 5.674045,
+        "busX": 11.67375,
+        "firstX": 27.75,
+        "cargoFixedX": 542.96875,
+        "cargoPerTonX": 8.859375
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 104,
+        "baseX": 768.721154,
+        "ecoX": 1.902911,
+        "busX": 4.381154,
+        "firstX": 10.852885,
+        "cargoFixedX": 573.644231,
+        "cargoPerTonX": -5.037393
+      }
+    ]
+  },
+  "TUPOLEV TU-214-210": {
+    "speed": 850,
+    "calibrations": [
+      {
+        "name": "BTH_853",
+        "minKm": 0,
+        "maxKm": 2930,
+        "distance": 853,
+        "factor": 34,
+        "baseX": 703.823529,
+        "ecoX": 5.177311,
+        "busX": 10.703727,
+        "firstX": 26.117647,
+        "cargoFixedX": 511.029412,
+        "cargoPerTonX": 8.338235
+      },
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 112,
+        "baseX": 703.875,
+        "ecoX": 1.626594,
+        "busX": 3.8242,
+        "firstX": 10.077679,
+        "cargoFixedX": 532.686012,
+        "cargoPerTonX": -4.677827
+      }
+    ]
+  },
+  "LLYUSHIN II-96M": {
+    "speed": 870,
+    "calibrations": [
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 110,
+        "baseX": 1963.709091,
+        "ecoX": 1.211541,
+        "busX": 3.618375,
+        "firstX": 10.260909,
+        "cargoFixedX": 542.361983,
+        "cargoPerTonX": -4.76281
+      }
+    ]
+  },
+  "LLYUSHIN II-96-300": {
+    "speed": 870,
+    "calibrations": [
+      {
+        "name": "SJW_5008",
+        "minKm": 2931,
+        "maxKm": 7509,
+        "distance": 5008,
+        "factor": 110,
+        "baseX": 991.072727,
+        "ecoX": 1.398848,
+        "busX": 3.618407,
+        "firstX": 10.260909,
+        "cargoFixedX": 542.363636,
+        "cargoPerTonX": -4.762727
+      }
+    ]
+  }
+}
