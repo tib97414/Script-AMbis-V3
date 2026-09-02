@@ -14,6 +14,9 @@ export default function App() {
   const [runningG, setRunningG] = useState(false);
   const [runningC, setRunningC] = useState(false);
   const [calcError, setCalcError] = useState(null);
+  const [useDemandRepack, setUseDemandRepack] = useState(false);
+  const [useResidualSecondPass, setUseResidualSecondPass] = useState(false);
+  const [residualThreshold, setResidualThreshold] = useState(1500);
 
   const { routes, rawRouteData, handleFile } = useRouteImport({
     activeBonus: null,
@@ -26,6 +29,9 @@ export default function App() {
     routes,
     runPaxCircuitOptimizer,
     runGlobalOptCargo,
+    useDemandRepack,
+    useResidualSecondPass,
+    residualThreshold,
     setGRes,
     setCargoRes,
     setRunningG,
@@ -39,7 +45,7 @@ export default function App() {
     setRunningC,
     setCalcError,
   });
-
+  
   return (
     <div style={{ fontFamily: "Arial, sans-serif", maxWidth: 900, margin: "0 auto", padding: 20 }}>
       <h2>✈️ AM-clean — Jalon 3 minimal</h2>
@@ -54,6 +60,30 @@ export default function App() {
           ⚠️ {calcError}
         </div>
       )}
+
+      <div style={{ display: "flex", gap: 14, marginBottom: 12, flexWrap: "wrap", fontSize: 13 }}>
+  <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
+    <input type="checkbox" checked={useDemandRepack} onChange={(e) => setUseDemandRepack(e.target.checked)} />
+    Repack demandes
+  </label>
+
+  <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
+    <input type="checkbox" checked={useResidualSecondPass} onChange={(e) => setUseResidualSecondPass(e.target.checked)} />
+    Seconde passe résidus + couverture cible
+  </label>
+
+  {useResidualSecondPass && (
+    <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
+      Seuil résidu :
+      <input
+        type="number" min={50} max={3000} step={50}
+        value={residualThreshold}
+        onChange={(e) => setResidualThreshold(Math.max(50, Math.min(3000, +e.target.value || 1500)))}
+        style={{ width: 70 }}
+      />
+    </label>
+  )}
+</div>
 
       <button onClick={handleGlobal} disabled={!routes.length || runningG} style={{ marginRight: 10, padding: "10px 16px" }}>
         {runningG ? "⏳ Calcul PAX..." : "🚀 Lancer l'optimisation PAX"}

@@ -49,7 +49,7 @@ function assignSourceLayers(circuits168, circuits84, circuits24) {
 }
 
 function buildSoloRescueCircuits(unassignedRoutes, aircrafts, options = {}) {
-  const { useAuxRevenue = false, timeoutMs = 10_000 } = options;
+  const { useAuxRevenue = false, timeoutMs = 60_000 } = options;
   const deadline = Number.isFinite(timeoutMs) && timeoutMs > 0
     ? Date.now() + timeoutMs
     : null;
@@ -164,7 +164,11 @@ export function runProfitMaxPaxOptimizer(aircrafts, routes, bandSize, options = 
     strictEcoDemandIsolation = false,
     ecoDemandHighThreshold = 300,
     ecoDemandExhaustedThreshold = 5,
-    timeoutMs = 15_000,
+    timeoutMs = 300_000,
+    beamWidth = 24,
+    maxBranchPerStep = 12,
+    maxCandidatesPerAircraftPerBand = 12,
+    anchorCount = 3,
   } = options;
 
   const deadline = Number.isFinite(timeoutMs) && timeoutMs > 0
@@ -178,12 +182,14 @@ export function runProfitMaxPaxOptimizer(aircrafts, routes, bandSize, options = 
     strictEcoDemandIsolation,
     ecoDemandHighThreshold,
     ecoDemandExhaustedThreshold,
-    beamWidth: 24,
-    maxBranchPerStep: 12,
-    maxCandidatesPerAircraftPerBand: 12,
-    anchorCount: 8,
+    beamWidth,
+    maxBranchPerStep,
+    maxCandidatesPerAircraftPerBand,
+    anchorCount,
     timeoutMs,
   });
+
+  const poolTimedOut = pool.timedOut;
 
   const mergedCircuits = assignSourceLayers(
     deduplicateCircuitsByRoutes(pool.circuits168),
@@ -192,14 +198,15 @@ export function runProfitMaxPaxOptimizer(aircrafts, routes, bandSize, options = 
   );
 
   const candidates = circuitsToCandidates(mergedCircuits, {
-    metadata: {
-      optimizer: "profitMax",
-    },
+    metadata: { optimizer: "profitMax" },
   });
 
-  const selection = deadline && Date.now() >= deadline
-    ? { selected: [] }
-    : selectCandidateColumnsBeam(candidates, GLOBAL_SELECTION_OPTIONS);
+const isOverBudget = deadline && Date.now() >= deadline;
+  const selection = selectCandidateColumnsBeam(candidates, {
+    ...GLOBAL_SELECTION_OPTIONS,
+    beamWidth: isOverBudget ? 4 : GLOBAL_SELECTION_OPTIONS.beamWidth,
+  });
+
   let selectedCircuits = (selection.selected || [])
     .map((candidate) => candidate.metadata?.sourceCircuit || null)
     .filter(Boolean);
@@ -211,7 +218,7 @@ export function runProfitMaxPaxOptimizer(aircrafts, routes, bandSize, options = 
   const unassignedRoutes = routes.filter((route) => !usedRouteIds.has(route.id));
   const rescueSolos = buildSoloRescueCircuits(unassignedRoutes, aircrafts, {
     useAuxRevenue,
-    timeoutMs: Math.max(1, Math.floor((timeoutMs || 15_000) / 2)),
+    timeoutMs: Math.max(1, Math.floor((timeoutMs || 60_000) / 2)),
   });
 
   for (const solo of rescueSolos) {
@@ -224,11 +231,9 @@ export function runProfitMaxPaxOptimizer(aircrafts, routes, bandSize, options = 
   return {
     ...formatResult(selectedCircuits, routes, { useAuxRevenue }),
     pools: POOLS,
-    timedOut: Boolean(deadline && Date.now() >= deadline),
-    timedOutStage: deadline && Date.now() >= deadline ? "profitMaxPaxOptimizer" : null,
+    timedOut: Boolean(isOverBudget) || poolTimedOut,
+    timedOutStage: poolTimedOut
+      ? "generateFleetFirstCircuitPool"
+      : (isOverBudget ? "profitMaxPaxOptimizer:degraded-selection" : null),
   };
-}
-
-export function runPaxCircuitOptimizer(aircrafts, routes, bandSize, options = {}) {
-  return runProfitMaxPaxOptimizer(aircrafts, routes, bandSize, options);
 }

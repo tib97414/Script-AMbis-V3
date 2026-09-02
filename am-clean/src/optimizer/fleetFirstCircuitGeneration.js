@@ -1,41 +1,17 @@
 import { makeDemandBands } from "./demandBands";
 import { beamPackCircuitsMultiAnchor } from "./beamCircuitSearch";
 import { routesEcoDemandCompatible } from "../utils/paxResultUtils";
-import { POOLS } from "../data/pools";
+import { POOLS, poolBlockForCategory } from "../data/pools";
 import {
   buildEvaluatedCircuit,
   enrichRouteEconomics,
   findFullAircraft,
-} from "./economics/circuitEconomics.js";
-
-function inferCircuitPoolLabel(routes = []) {
-  const categories = (routes || [])
-    .map((route) => Number(route?.category ?? route?.cat ?? 0))
-    .filter((value) => Number.isFinite(value) && value > 0);
-
-  if (!categories.length) return "Cat N/A";
-
-  const topCategory = Math.max(...categories);
-  const match = POOLS.find(({ min, max }) => topCategory >= min && topCategory <= max);
-
-  return match?.label || `Cat ${topCategory}`;
-}
-
-function attachPoolMetadata(circuit, routes = []) {
-  if (!circuit) return circuit;
-
-  const label = inferCircuitPoolLabel(routes);
-  return {
-    ...circuit,
-    poolCategory: label,
-    poolLabel: label,
-  };
-}
+} from "./economics/circuitEconomics";
 
 export function buildCircuitFromRoutes(aircraft, routes, windowH, rotations = 1, extra = {}) {
   const { useAuxRevenue = true, allAircrafts = [], pool = "profit" } = extra;
 
-  const built = buildEvaluatedCircuit(routes, allAircrafts.length ? allAircrafts : [aircraft], {
+  return buildEvaluatedCircuit(routes, allAircrafts.length ? allAircrafts : [aircraft], {
     windowH,
     useAuxRevenue,
     defaultRotations: rotations,
@@ -44,8 +20,37 @@ export function buildCircuitFromRoutes(aircraft, routes, windowH, rotations = 1,
     typeLabel: `${routes.length} route(s)${rotations > 1 ? ` ×${rotations}` : ""} [profit]`,
     _sourceWindow: extra._sourceWindow,
   });
+}
 
-  return attachPoolMetadata(built, routes);
+// Regroupe les routes par bloc de pool (basé sur leur propre catégorie),
+// pour ne tester en primaire que les avions pertinents pour ce bloc.
+export function groupRoutesByPoolBlock(routes) {
+  const groups = new Map();
+
+  for (const route of routes) {
+    const block = poolBlockForCategory(route.category);
+    if (!groups.has(block.label)) {
+      groups.set(block.label, { block, routes: [] });
+    }
+    groups.get(block.label).routes.push(route);
+  }
+
+  return [...groups.values()];
+}
+
+// Filtre les avions éligibles en PRIMAIRE pour un bloc donné.
+// N'affecte QUE la boucle de génération de circuits ici — la cascade de
+// flotte (buildMultiFleetCascade) continue d'utiliser AIRCRAFTS_RAW complet,
+// sans restriction, comme dans l'ancien mécanisme validé par Thibault.
+export function aircraftsForPoolBlock(aircrafts, block) {
+  return aircrafts.filter((aircraft) => {
+    const ac = findFullAircraft(aircraft);
+    return Number(ac?.cat || 0) >= block.testCatMin;
+  });
+}
+
+function isDeadlineExceeded(deadline) {
+  return Boolean(deadline && Date.now() >= deadline);
 }
 
 export function generateFleetFirstCircuitPool(aircrafts, routes, options = {}) {
@@ -59,8 +64,8 @@ export function generateFleetFirstCircuitPool(aircrafts, routes, options = {}) {
     beamWidth = 24,
     maxBranchPerStep = 12,
     maxCandidatesPerAircraftPerBand = 12,
-    anchorCount = 8,
-    timeoutMs = 15_000,
+    anchorCount = 4,
+    timeoutMs = null,
   } = options;
 
   const deadline = Number.isFinite(timeoutMs) && timeoutMs > 0
@@ -71,6 +76,7 @@ export function generateFleetFirstCircuitPool(aircrafts, routes, options = {}) {
   const circuits84 = [];
   const circuits24 = [];
   const routeSetSeen = new Set();
+  let timedOut = false;
 
   const registerCircuit = (list, circuit) => {
     if (!circuit || circuit.totalProfit <= 0) return;
@@ -85,83 +91,100 @@ export function generateFleetFirstCircuitPool(aircrafts, routes, options = {}) {
 
   const bands = bandSize ? makeDemandBands(bandSize) : [null];
 
-  for (const aircraft of aircrafts) {
-    if (deadline && Date.now() >= deadline) break;
+  // ── Génération 168h / 84h, restreinte par bloc de pool ────────────────────
+  const routeGroups168 = groupRoutesByPoolBlock(routes);
 
-    const ac = findFullAircraft(aircraft);
-    const eligible168 = routes
-      .map((route) => enrichRouteEconomics(ac, route, { useAuxRevenue, maxH: 168 }))
-      .filter(Boolean);
+  outerGroups: for (const { block, routes: blockRoutes } of routeGroups168) {
+    const blockAircrafts = aircraftsForPoolBlock(aircrafts, block);
 
-    if (eligible168.length >= 2) {
-      for (const band of bands) {
-        const poolRoutes = band
-          ? eligible168.filter((r) => (r.dEco || 0) >= band.min && (r.dEco || 0) < band.max)
-          : eligible168;
+    for (const aircraft of blockAircrafts) {
+      if (isDeadlineExceeded(deadline)) {
+        timedOut = true;
+        break outerGroups;
+      }
 
-        if (poolRoutes.length < 2) continue;
+      const ac = findFullAircraft(aircraft);
+      const eligible168 = blockRoutes
+        .map((route) => enrichRouteEconomics(ac, route, { useAuxRevenue, maxH: 168 }))
+        .filter(Boolean);
 
-        const found168 = beamPackCircuitsMultiAnchor(poolRoutes, {
-          targetH: 168,
-          beamWidth,
-          maxBranchPerStep,
-          maxCandidatesOut: maxCandidatesPerAircraftPerBand,
-          minFillRatio: 0.45,
-          anchorCount,
-          deadline,
-        }).filter(
-          (state) =>
-            !strictEcoDemandIsolation ||
-            routesEcoDemandCompatible(state.routes, {
-              highEcoThreshold: ecoDemandHighThreshold,
-              exhaustedEcoThreshold: ecoDemandExhaustedThreshold,
-            })
-        );
+      if (eligible168.length >= 2) {
+        for (const band of bands) {
+          if (isDeadlineExceeded(deadline)) {
+            timedOut = true;
+            break outerGroups;
+          }
 
-        for (const state of found168) {
-          const circuit = attachPoolMetadata(
-            buildEvaluatedCircuit(state.routes, aircrafts, {
+          const poolRoutes = band
+            ? eligible168.filter((r) => (r.dEco || 0) >= band.min && (r.dEco || 0) < band.max)
+            : eligible168;
+
+          if (poolRoutes.length < 2) continue;
+
+          const found168 = beamPackCircuitsMultiAnchor(poolRoutes, {
+            targetH: 168,
+            beamWidth,
+            maxBranchPerStep,
+            maxCandidatesOut: maxCandidatesPerAircraftPerBand,
+            minFillRatio: 0.45,
+            anchorCount,
+          }).filter(
+            (state) =>
+              !strictEcoDemandIsolation ||
+              routesEcoDemandCompatible(state.routes, {
+                highEcoThreshold: ecoDemandHighThreshold,
+                exhaustedEcoThreshold: ecoDemandExhaustedThreshold,
+              })
+          );
+
+          for (const state of found168) {
+            const circuit = buildEvaluatedCircuit(state.routes, aircrafts, {
               windowH: 168,
               useAuxRevenue,
               defaultRotations: 1,
               pool: "profit-beam",
               typeLabel: `${state.routes.length} route(s) [168h profit]`,
               _sourceWindow: "circuits168",
-            }),
-            state.routes
-          );
-          registerCircuit(circuits168, circuit);
-        }
+            });
+            registerCircuit(circuits168, circuit);
+          }
 
-        if (useTrue84) {
-          const found84 = beamPackCircuitsMultiAnchor(poolRoutes, {
-            targetH: 84,
-            beamWidth,
-            maxBranchPerStep,
-            maxCandidatesOut: Math.max(4, Math.floor(maxCandidatesPerAircraftPerBand / 2)),
-            minFillRatio: 0.45,
-            anchorCount,
-            deadline,
-          });
+          if (useTrue84) {
+            const found84 = beamPackCircuitsMultiAnchor(poolRoutes, {
+              targetH: 84,
+              beamWidth,
+              maxBranchPerStep,
+              maxCandidatesOut: Math.max(4, Math.floor(maxCandidatesPerAircraftPerBand / 2)),
+              minFillRatio: 0.45,
+              anchorCount,
+            });
 
-          for (const state of found84) {
-            const circuit = attachPoolMetadata(
-              buildEvaluatedCircuit(state.routes, aircrafts, {
+            for (const state of found84) {
+              const circuit = buildEvaluatedCircuit(state.routes, aircrafts, {
                 windowH: 84,
                 useAuxRevenue,
                 defaultRotations: 2,
                 pool: "profit-beam",
                 typeLabel: `${state.routes.length} route(s) ×2 [84h profit]`,
                 _sourceWindow: "circuits84",
-              }),
-              state.routes
-            );
-            registerCircuit(circuits84, circuit);
+              });
+              registerCircuit(circuits84, circuit);
+            }
           }
         }
       }
     }
+  }
 
+  // ── Génération 24h — pas de restriction pool (jamais fait avant, on garde
+  // le comportement d'origine ; ce n'est pas la boucle coûteuse). ──────────
+  outer24: for (const aircraft of aircrafts) {
+    if (isDeadlineExceeded(deadline)) {
+      timedOut = true;
+      break outer24;
+    }
+
+    const ac = findFullAircraft(aircraft);
     const eligible24 = routes
       .map((route) => enrichRouteEconomics(ac, route, { useAuxRevenue, maxH: 24 }))
       .filter(Boolean);
@@ -174,22 +197,18 @@ export function generateFleetFirstCircuitPool(aircrafts, routes, options = {}) {
         maxCandidatesOut: maxCandidatesPerAircraftPerBand,
         minFillRatio: 0.25,
         anchorCount,
-        deadline,
       });
 
       for (const state of found24) {
         if (state.routes.length < 2) continue;
-        const circuit = attachPoolMetadata(
-          buildEvaluatedCircuit(state.routes, aircrafts, {
-            windowH: 24,
-            useAuxRevenue,
-            defaultRotations: 1,
-            pool: "profit-beam",
-            typeLabel: `${state.routes.length} route(s) [24h profit]`,
-            _sourceWindow: "circuits24",
-          }),
-          state.routes
-        );
+        const circuit = buildEvaluatedCircuit(state.routes, aircrafts, {
+          windowH: 24,
+          useAuxRevenue,
+          defaultRotations: 1,
+          pool: "profit-beam",
+          typeLabel: `${state.routes.length} route(s) [24h profit]`,
+          _sourceWindow: "circuits24",
+        });
         registerCircuit(circuits24, circuit);
       }
 
@@ -197,29 +216,20 @@ export function generateFleetFirstCircuitPool(aircrafts, routes, options = {}) {
         const rot = Math.floor(24 / route.ft);
         if (rot < 1) continue;
 
-        const circuit = attachPoolMetadata(
-          buildEvaluatedCircuit([route], aircrafts, {
-            windowH: 24,
-            useAuxRevenue,
-            defaultRotations: rot,
-            pool: "profit-solo",
-            typeLabel: `×${rot} [24h solo profit]`,
-            _sourceWindow: "circuits24",
-          }),
-          [route]
-        );
+        const circuit = buildEvaluatedCircuit([route], aircrafts, {
+          windowH: 24,
+          useAuxRevenue,
+          defaultRotations: rot,
+          pool: "profit-solo",
+          typeLabel: `×${rot} [24h solo profit]`,
+          _sourceWindow: "circuits24",
+        });
         registerCircuit(circuits24, circuit);
       }
     }
   }
 
-  return {
-    circuits168,
-    circuits84,
-    circuits24,
-    timedOut: Boolean(deadline && Date.now() >= deadline),
-    timedOutStage: deadline && Date.now() >= deadline ? "fleetFirstCircuitPool" : null,
-  };
+  return { circuits168, circuits84, circuits24, timedOut };
 }
 
 export function deduplicateCircuitsByRoutes(circuits = []) {

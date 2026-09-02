@@ -2,16 +2,46 @@ import { PRICE } from "../data/constants";
 import { getSeatConfigs } from "./seatConfigs";
 import { allocateDemand } from "../core/allocateDemand";
 
+const cabinConfigCache = new Map();
+
+export function clearCabinConfigCache() {
+  cabinConfigCache.clear();
+}
+
 export function cabinConfig(seats, dEco, dBus, dFirst, routePrices, options = {}) {
+  const { seatTolerance = 1 } = options;
+  const priceKey = routePrices
+    ? `${routePrices.eco || 0}|${routePrices.bus || 0}|${routePrices.first || 0}`
+    : 0;
+  const finalKey = `${priceKey}|${seatTolerance}`;
+
+  let bySeat = cabinConfigCache.get(seats);
+  if (!bySeat) { bySeat = new Map(); cabinConfigCache.set(seats, bySeat); }
+
+  let byEco = bySeat.get(dEco);
+  if (!byEco) { byEco = new Map(); bySeat.set(dEco, byEco); }
+
+  let byBus = byEco.get(dBus);
+  if (!byBus) { byBus = new Map(); byEco.set(dBus, byBus); }
+
+  let byFirst = byBus.get(dFirst);
+  if (!byFirst) { byFirst = new Map(); byBus.set(dFirst, byFirst); }
+
+  const cached = byFirst.get(finalKey);
+  if (cached !== undefined) return cached;
+
+  const result = computeCabinConfig(seats, dEco, dBus, dFirst, routePrices, options);
+  byFirst.set(finalKey, result);
+  return result;
+}
+
+function computeCabinConfig(seats, dEco, dBus, dFirst, routePrices, options = {}) {
   const { seatTolerance = 1 } = options;
 
   const pEco = (routePrices && routePrices.eco) || PRICE.ECO;
   const pBus = (routePrices && routePrices.bus) || PRICE.BUS;
   const pFirst = (routePrices && routePrices.first) || PRICE.FIRST;
 
-  // Cap dur : jamais plus de sièges que la demande aller simple ne peut absorber.
-  // On calcule d'abord la configuration sur un aller simple, puis on dérive
-  // les totals de rotation complète sur la base de ce résultat unique.
   const oneWayEco = (dEco || 0) / 2;
   const oneWayBus = (dBus || 0) / 2;
   const oneWayFirst = (dFirst || 0) / 2;

@@ -10,12 +10,10 @@ function formatPaxCargoLabel(sE, sB, sF, cargoTons = 0) {
   return cargo > 0 ? `${sE}é/${sB}b/${sF}f/${cargo}t` : `${sE}é/${sB}b/${sF}f`;
 }
 
-// Demande résiduelle totale pondérée en pax A/R
 function totalResidualPax(remEco, remBus, remFirst) {
   return remEco + remBus + remFirst;
 }
 
-// Pénalité de sur-dimensionnement : nb de sièges au-delà de la demande résiduelle
 function seatOvershootPenalty(seats, remEco, remBus, remFirst) {
   const neededSeats = Math.ceil((remEco + remBus + remFirst) / 2);
   return Math.max(0, seats - neededSeats);
@@ -34,7 +32,39 @@ function planePaxMass(plane) {
   );
 }
 
+// ── CACHE ──────────────────────────────────────────────────────────────────
+// buildMultiFleetCascade est appelée un très grand nombre de fois avec les
+// mêmes (primaryAc, circuitRoutes) — mesuré à 99,06% de redondance sur un
+// jeu de 44 routes (137 174 appels pour 1282 combinaisons de routes uniques,
+// avant même de distinguer par avion primaire). Le résultat ne dépend que de
+// l'identité de primaryAc + le contenu exact des routes du circuit (id +
+// demandes, qui ne changent jamais pour un même circuit candidat).
+const multiFleetCascadeCache = new Map();
+
+export function clearMultiFleetCascadeCache() {
+  multiFleetCascadeCache.clear();
+}
+
+function cascadeCacheKey(primaryAc, circuitRoutes) {
+  const acKey = `${primaryAc?.brand || ""}|${primaryAc?.model || ""}`;
+  const routesKey = circuitRoutes
+    .map((r) => `${r.id || r.name}:${r.dEco || 0}:${r.dBus || 0}:${r.dFirst || 0}:${r.dCargo || 0}`)
+    .sort()
+    .join(",");
+  return `${acKey}::${routesKey}`;
+}
+
 export function buildMultiFleetCascade(primaryAc, allAircrafts, circuitRoutes) {
+  const cacheKey = cascadeCacheKey(primaryAc, circuitRoutes);
+  const cached = multiFleetCascadeCache.get(cacheKey);
+  if (cached) return cached;
+
+  const result = computeMultiFleetCascade(primaryAc, allAircrafts, circuitRoutes);
+  multiFleetCascadeCache.set(cacheKey, result);
+  return result;
+}
+
+function computeMultiFleetCascade(primaryAc, allAircrafts, circuitRoutes) {
   const minPositiveDemand = (values) => {
     const positives = values.filter((value) => value > 0);
     return positives.length ? Math.min(...positives) : 0;
@@ -62,12 +92,10 @@ export function buildMultiFleetCascade(primaryAc, allAircrafts, circuitRoutes) {
     for (const ac of candidates) {
       if (ac.seats > maxAllowedSeats) continue;
 
-      // Éligibilité distance/catégorie
       if (circuitRoutes.some((r) => r.distance > ac.range || r.category < ac.cat)) {
         continue;
       }
 
-      // Vitesse différente → recalcul ft total
       if (i > 0 && ac.speed) {
         const STEP = 0.25;
         const totalFtCandidate = circuitRoutes.reduce((s, r) => {
@@ -79,12 +107,10 @@ export function buildMultiFleetCascade(primaryAc, allAircrafts, circuitRoutes) {
         if (totalFtCandidate > 168) continue;
       }
 
-      // seatTolerance = 0 pour avions suivants (évite sur-configuration)
       const cfg = cabinConfig(ac.seats, remEco, remBus, remFirst, null, {
         seatTolerance: i === 0 ? 1 : 0,
       });
 
-      // Cap dur : jamais plus de ceil(demande / 2) sièges par classe pour i > 0
       let sE = cfg.sE;
       let sB = cfg.sB;
       let sF = cfg.sF;
@@ -106,9 +132,6 @@ export function buildMultiFleetCascade(primaryAc, allAircrafts, circuitRoutes) {
       const paxBus = allocateDemand(capBus, remBus);
       const paxFirst = allocateDemand(capFirst, remFirst);
 
-      // Revenu PAX pur — sans cargo ventre dans le critère de sélection.
-      // Le cargo ventre est calculé après et ne doit pas influencer le choix
-      // du type d'avion (sinon un A380 gagne sur sa soute).
       const paxRevOnly =
         paxEco * PRICE.ECO +
         paxBus * PRICE.BUS +
@@ -140,10 +163,6 @@ export function buildMultiFleetCascade(primaryAc, allAircrafts, circuitRoutes) {
         continue;
       }
 
-      // Critères de sélection pour i > 0 :
-      // 1. Meilleur revenu PAX pur
-      // 2. À revenu égal → meilleur fitScore
-      // 3. À fitScore égal → avion le plus petit (overshoot minimal)
       if (i > 0) {
         const better =
           paxRevOnly > bestEntry.paxRevOnly + 0.01 ||
@@ -155,7 +174,6 @@ export function buildMultiFleetCascade(primaryAc, allAircrafts, circuitRoutes) {
 
         if (better) bestEntry = entry;
       } else {
-        // Avion principal (i === 0) : comportement original
         if (
           fitScore < bestEntry.fitScore ||
           (fitScore === bestEntry.fitScore && profit > bestEntry.profit)
@@ -203,8 +221,6 @@ export function buildMultiFleetCascade(primaryAc, allAircrafts, circuitRoutes) {
     remFirst = Math.max(0, remFirst - paxFirst);
   }
 
-  // Cargo ventre — calculé après sélection des avions, ne doit pas influencer
-  // le choix du type d'avion.
   const dCargoMin = (() => {
     const vals = circuitRoutes.map((r) => r.dCargo || 0).filter((d) => d > 0);
     return vals.length > 0 ? Math.floor(Math.min(...vals)) : 0;

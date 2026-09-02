@@ -3,6 +3,8 @@ import * as XLSX from "xlsx";
 
 import { parseRoutes } from "../utils/parseRoutes";
 import { clearSeatConfigCache } from "../cabin/seatConfigs";
+import { clearCabinConfigCache } from "../cabin/cabinConfig";
+import { clearMultiFleetCascadeCache } from "../cabin/fleetMulti";
 
 export function useRouteImport({
   activeBonus,
@@ -29,6 +31,8 @@ export function useRouteImport({
           const raw = XLSX.utils.sheet_to_json(ws);
 
           clearSeatConfigCache();
+          clearCabinConfigCache();
+          clearMultiFleetCascadeCache();
 
           setRawRouteData(raw);
 

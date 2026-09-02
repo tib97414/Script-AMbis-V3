@@ -402,11 +402,52 @@ function finalizeCircuitObject(best, routes, options) {
     cat: ac.cat,
   };
 
-  const routeRotations = routes.map((route) => ({
-    ...route,
-    ft: flightTime(route.distance, ac.speed),
-    rotations: route.rotations || defaultRotations || 1,
-  }));
+  // CORRECTIF : recalcule TOUS les champs économiques par route avec le vrai
+  // avion final (ac), pas seulement ft. Avant, profit/rev/tax/cabin/auxRevenue/
+  // fuelCost restaient figés avec les valeurs de l'avion-sonde utilisé pendant
+  // la génération du pool, même quand l'avion réellement retenu était différent
+  // — ce qui donnait des chiffres par route incohérents avec le totalProfit
+  // du circuit (lui, correctement recalculé).
+  const routeRotations = routes.map((route) => {
+    const rotations = route.rotations || defaultRotations || 1;
+    const reEvaluated = evaluatePlaneOnRoute({
+      aircraft: ac,
+      route,
+      demandEco: route.dEco || 0,
+      demandBus: route.dBus || 0,
+      demandFirst: route.dFirst || 0,
+      useAuxRevenue,
+    });
+
+    if (!reEvaluated) {
+      // Filet de sécurité : l'avion final devrait toujours être éligible
+      // (déjà vérifié en amont), mais si jamais ce n'est pas le cas, on
+      // garde l'ancien comportement plutôt que de planter.
+      return {
+        ...route,
+        ft: flightTime(route.distance, ac.speed),
+        rotations,
+      };
+    }
+
+    return {
+      ...route,
+      ft: reEvaluated.ft,
+      rev: reEvaluated.ticketRevenue + reEvaluated.auxRevenue,
+      profit: reEvaluated.profit,
+      auxRevenue: reEvaluated.auxRevenue,
+      fuelCost: reEvaluated.fuelCost,
+      tax: reEvaluated.tax,
+      cabin: {
+        sE: reEvaluated.sE,
+        sB: reEvaluated.sB,
+        sF: reEvaluated.sF,
+        rev: reEvaluated.ticketRevenue,
+        label: reEvaluated.label,
+      },
+      rotations,
+    };
+  });
 
   const circuit = {
     aircraft: ai,
@@ -449,7 +490,6 @@ if (route.distance > ac.range || route.category < ac.cat) {
 
     return null;
 }
-
 
   const plane = evaluatePlaneOnRoute({
     aircraft: ac,
